@@ -11,10 +11,10 @@ const CountryInfo = () => {
         const url =`https://restcountries.eu/rest/v2/name/${name}`;
         fetch(url)
         .then(res=>res.json())
-        .then(data=>setInfro(data));
+        .then(data=>setInfro(data[0]));
     },[]);
 
-    const{flag,capital}=infro;
+    const{flag,capital,region,subregion,languages}=infro;
 
     return (
         <div>
@@ -27,6 +27,10 @@ const CountryInfo = () => {
                     
                     
                     </Card.Text>
+                    <h4>Region: {region}</h4>
+                    <h4>Subregion:{subregion}</h4>
+                    <h4>Languages:{name}</h4>
+
          
                     </Card.Body>
             
